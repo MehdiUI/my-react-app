@@ -1,0 +1,44 @@
+
+.Banner
+  display: flex
+  width: 87.5vw
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 2rem
+
+  img
+    width: 100%
+    border-radius: 25px
+    height: 225px
+    object-fit: cover
+    display: block
+
+     
+  &::after
+    content: ''
+    position: absolute
+   
+    
+    width: 87.5vw
+    height: 225px
+    background-color: rgba(0, 0, 0, 0.6)
+    border-radius: 25px
+    z-index: 1
+    pointer-events: none
+
+  &__text
+    position: absolute
+    z-index: 2
+    color: white
+    font-size: 48px
+    font-weight: 600
+    text-align: left
+    justify-content: center
+
+    display: flex
+    padding: 2rem
+
+    @media (max-width: 767px)
+    text-align: left 
+    font-size: 1.5rem

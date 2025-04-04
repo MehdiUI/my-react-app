@@ -1,7 +1,11 @@
+import banniere from '../assets/Image source 1.png'
+
 function Banner() {
     return (
-      <div>
-        <h1>Hello depuis MonComposant !</h1>
+      <div className='Banner'>
+        <img src={banniere} alt="Bannière" />
+        <div className="Banner__overlay"></div>
+        <div className="Banner__text">Chez vous, partout et ailleurs</div>
       </div>
     );
   }

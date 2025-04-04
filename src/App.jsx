@@ -8,16 +8,16 @@ import './Styles/App.sass'
 
 function App() {
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
     <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/a-propos" element={<About />} />
-        <Route path="/logement/:id" element={<Housing />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-     
-    </BrowserRouter>
+    <Routes>
+      <Route path="/home" element={<Home />} />
+      <Route path="/a-propos" element={<About />} />
+      <Route path="/logement/:id" element={<Housing />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+  
   );
 }
 

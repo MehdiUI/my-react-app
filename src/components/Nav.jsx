@@ -1,16 +1,20 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import logo from '../assets/LOGO.png'
 import '../Styles/Nav.sass'
 
 function Nav() {
+  const location = useLocation()
+
+  const isActiveLink = (path) => location.pathname === path
+
   return (
     <nav className="nav">
-      <img src={logo} alt="Kasa logo" className="nav__logo" />
+      <a href="/"><img src={logo} alt="Kasa logo" className="nav__logo" /></a>
       <ul className="nav__links">
         <li>
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? 'nav__link nav__link--active' : 'nav__link')}
+            className={isActiveLink('/') ? 'nav__link nav__link--active' : 'nav__link'}
           >
             Accueil
           </NavLink>
@@ -18,7 +22,7 @@ function Nav() {
         <li>
           <NavLink
             to="/a-propos"
-            className={({ isActive }) => (isActive ? 'nav__link nav__link--active' : 'nav__link')}
+            className={isActiveLink('/a-propos') ? 'nav__link nav__link--active' : 'nav__link'}
           >
             À propos
           </NavLink>

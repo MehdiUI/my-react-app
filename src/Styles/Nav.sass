@@ -3,8 +3,7 @@
   justify-content: space-between
   align-items: center
   padding: 2rem
-  width: 100%
-  color: red
+  width: 87.5vw
 
   &__logo
     height: 40px
@@ -22,3 +21,11 @@
     &--active
       text-decoration: underline
 
+  @media screen and (max-width: 767px)
+    flex-direction: row
+    justify-content: left
+    gap: 1rem
+
+    &__links
+      flex-direction: row
+      align-items: center

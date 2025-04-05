@@ -5,6 +5,7 @@ import NotFound from './pages/notFound';
 import Nav from './components/Nav';
 import Banner from './components/Banner';
 import Card from './components/Card';
+import Footer from './components/Footer';
 import './Styles/App.sass'
 import './Styles/Banner.sass'
 
@@ -14,6 +15,7 @@ function App() {
     <Nav />
     <Banner/>
     <Card />
+    <Footer/>
     <Routes>
       
       <Route path="/a-propos" element={<About />} />

@@ -2,10 +2,11 @@
 .Banner
   display: flex
   width: 87.5vw
-  display: flex
   justify-content: center
   align-items: center
-  padding: 2rem
+  align-self: center
+  padding: 2rem  0rem  2rem  0rem  
+  margin: 0 auto
 
   img
     width: 100%
@@ -26,19 +27,19 @@
     border-radius: 25px
     z-index: 1
     pointer-events: none
+    
+.Banner__text
+  position: absolute
+  z-index: 2
+  color: white
+  font-size: 48px
+  font-weight: 600
+  text-align: left
+  justify-content: center
+  display: flex
+  padding: 4rem
 
-  &__text
-    position: absolute
-    z-index: 2
-    color: white
-    font-size: 48px
-    font-weight: 600
+  @media (max-width: 767px)
+    padding: 3rem
+    font-size: 24px
     text-align: left
-    justify-content: center
-
-    display: flex
-    padding: 2rem
-
-    @media (max-width: 767px)
-    text-align: left 
-    font-size: 1.5rem

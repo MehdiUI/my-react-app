@@ -1,4 +1,5 @@
 import banniere from '../assets/Image source 1.png'
+import '../Styles/Footer.sass'
 
 function Banner() {
     return (

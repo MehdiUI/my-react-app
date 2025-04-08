@@ -1,0 +1,168 @@
+.product
+  width: 84.5vw
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  font-family: 'Montserrat', sans-serif
+
+  &__gallery
+    width: 100%
+    height: 350px
+    border-radius: 20px
+    overflow: hidden
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: 20px
+
+  &__header
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 1rem
+
+  &__infos
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+
+    h1
+      font-size: 24px
+      font-weight: 500
+      margin: 0
+      color: #FF6060
+
+    p
+      font-size: 18px
+      color: #000
+      font-weight: 500
+
+  &__tags
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    list-style: none
+
+    .tag
+      background-color: #ff6060
+      color: white
+      padding: 0.3rem 1rem
+      border-radius: 10px
+      font-size: 12px
+
+  &__side
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: space-between
+    gap: 0.5rem
+
+.host
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  p
+    font-size: 14px
+    font-weight: 600
+  img
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    object-fit: cover
+
+.rating
+  display: flex
+  gap: 0.2rem
+
+.star
+  font-size: 18px
+  color: #e3e3e3
+
+  &.filled
+    color: #ff6060
+
+.product__dropdowns
+  display: flex
+  flex-direction: row
+  gap:20px
+
+.dropdown__content ul
+  list-style: none
+  padding-left: 0
+
+.dropdown
+  width: 50%
+  
+  &__toggle
+    background-color: #ff6060
+    color: white
+    font-weight: 600
+    border: none
+    width: 100%
+    padding: 1rem
+    border-radius: 5px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 1rem
+    cursor: pointer
+
+    .arrow
+      transition: transform 0.3s ease
+
+    .up
+      transform: rotate(180deg)
+
+  &__content
+    max-height: 0
+    overflow: hidden
+    transition: max-height 0.4s ease, padding 0.4s ease
+    background: #f7f7f7
+    padding: 0 1rem
+    border-radius: 0 0 10px 10px
+
+    p,ul,li
+      text-decoration: none
+      margin:0
+    
+
+    &.open
+      max-height: 500px
+      padding: 1rem
+
+
+  .product__gallery
+  position: relative
+  img
+    width: 100%
+    border-radius: 25px
+    object-fit: cover
+    height: 340px
+
+.carousel__arrow
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  background: none
+  border: none
+  color: white
+  font-size: 2rem
+  cursor: pointer
+  z-index: 2
+
+  &.left
+    left: 1rem
+  &.right
+    right: 1rem
+
+.carousel__counter
+  position: absolute
+  bottom: 1rem
+  left: 50%
+  transform: translateX(-50%)
+  color: white
+  font-weight: bold
+  font-size: 1rem

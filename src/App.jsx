@@ -1,29 +1,34 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/about';
-import Housing from './pages/housing';
+import Product from './components/Product';
 import NotFound from './pages/notFound';
 import Nav from './components/Nav';
 import Banner from './components/Banner';
 import Card from './components/Card';
 import Footer from './components/Footer';
-import './Styles/App.sass'
-import './Styles/Banner.sass'
+import './Styles/App.sass';
+import './Styles/Banner.sass';
 
 function App() {
   return (
     <BrowserRouter>
-    <Nav />
-    <Banner/>
-    <Card />
-    <Footer/>
-    <Routes>
-      
-      <Route path="/a-propos" element={<About />} />
-      <Route path="/logement/:id" element={<Housing />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  </BrowserRouter>
-  
+      <Nav />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Banner />
+              <Card />
+            </>
+          }
+        />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/logement/:id" element={<Product />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

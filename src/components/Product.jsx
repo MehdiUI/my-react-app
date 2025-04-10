@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import data from '../datas/Product.json'
 import '../Styles/Product.sass'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 // Composant Dropdown
 function Dropdown({ title, children }) {
   const [isOpen, setIsOpen] = useState(false)
-
+  
   return (
     <div className="dropdown">
       <button className="dropdown__toggle" onClick={() => setIsOpen(!isOpen)}>
         {title}
-        <i className={`fa-solid fa-chevron-${isOpen ? 'up' : 'down'}`}></i>
+        <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
       </button>
       <div className={`dropdown__content ${isOpen ? 'open' : ''}`}>
         {children}
@@ -23,43 +25,47 @@ function Dropdown({ title, children }) {
 function Product() {
   const { id } = useParams()
   const product = data.find(item => item.id === id)
-
+  
   const [currentIndex, setCurrentIndex] = useState(0)
-
+  
   if (!product) return <h2>Produit introuvable</h2>
-
+  
   const totalPictures = product.pictures.length
   const stars = [1, 2, 3, 4, 5]
-
+  
   const goPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + totalPictures) % totalPictures)
   }
-
+  
   const goNext = () => {
     setCurrentIndex((prev) => (prev + 1) % totalPictures)
   }
-
+  
   return (
     <section className="product">
       {/* Galerie avec carrousel */}
       <div className="product__gallery">
-        <img src={product.pictures[currentIndex]} alt={`Photo ${currentIndex + 1}`} />
-
+        <img 
+          src={product.pictures[currentIndex]} 
+          alt={`${product.title} - vue ${currentIndex + 1}`} 
+          className="gallery__image"
+        />
+        
         {totalPictures > 1 && (
           <>
-            <button className="carousel__prev" onClick={goPrev}>
-              <i className="fa-solid fa-chevron-left"></i>
+            <button className="gallery__nav gallery__nav--prev" onClick={goPrev}>
+              <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <button className="carousel__next" onClick={goNext}>
-              <i className="fa-solid fa-chevron-right"></i>
+            <button className="gallery__nav gallery__nav--next" onClick={goNext}>
+              <FontAwesomeIcon icon={faChevronRight} />
             </button>
-            <div className="carousel__counter">
-              {currentIndex + 1} / {totalPictures}
+            <div className="gallery__counter">
+              {currentIndex + 1}/{totalPictures}
             </div>
           </>
         )}
       </div>
-
+      
       {/* Header infos */}
       <div className="product__header">
         <div className="product__infos">
@@ -71,7 +77,7 @@ function Product() {
             ))}
           </ul>
         </div>
-
+        
         <div className="product__side">
           <div className="host">
             <p>{product.host.name}</p>
@@ -84,13 +90,13 @@ function Product() {
           </div>
         </div>
       </div>
-
+      
       {/* Dropdowns */}
       <div className="product__dropdowns">
         <Dropdown title="Description">
           <p>{product.description}</p>
         </Dropdown>
-
+        
         <Dropdown title="Équipements">
           <ul style={{ listStyle: 'none', padding: 0 }}>
             {product.equipments.map((eq, index) => (

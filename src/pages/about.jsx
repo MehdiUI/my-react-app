@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/About.sass';
+import Banner from '../components/Banner';
+import Dropdown from '../components/Dropdown';
+import '../styles/Footer.sass';
+
 
 const About = () => {
-  // État pour gérer l'ouverture/fermeture des accordéons
-  const [openAccordion, setOpenAccordion] = useState(null);
-
-  // Fonction pour basculer l'ouverture/fermeture d'un accordéon
-  const toggleAccordion = (index) => {
-    if (openAccordion === index) {
-      setOpenAccordion(null);
-    } else {
-      setOpenAccordion(index);
-    }
-  };
-
   // Données des sections
   const sections = [
     {
@@ -36,31 +28,17 @@ const About = () => {
 
   return (
     <div className="about-container">
+      <Banner />
       <div className="about-content">
-        <h1 className="about-title">À propos de Kasa</h1>
-        
-        <div className="accordion-container">
+        <div className="about-dropdowns">
           {sections.map((section, index) => (
-            <div className="accordion" key={index}>
-              <div 
-                className="accordion-header" 
-                onClick={() => toggleAccordion(index)}
-              >
-                <h2>{section.title}</h2>
-                <span className={`accordion-icon ${openAccordion === index ? 'open' : ''}`}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z" fill="white"/>
-                  </svg>
-                </span>
-              </div>
-              
-              <div className={`accordion-content ${openAccordion === index ? 'open' : ''}`}>
-                <p>{section.content}</p>
-              </div>
-            </div>
+            <Dropdown key={index} title={section.title}>
+              <p>{section.content}</p>
+            </Dropdown>
           ))}
         </div>
       </div>
+      
     </div>
   );
 };

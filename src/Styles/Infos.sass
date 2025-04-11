@@ -1,0 +1,87 @@
+.product
+  &__header
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 1rem
+    
+    @media (max-width: 768px)
+      flex-direction: column
+
+  &__infos
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+
+    h1
+      font-size: 24px
+      font-weight: 500
+      margin: 0
+      color: #FF6060
+
+    p
+      font-size: 18px
+      color: #FF6060
+      font-weight: 500
+
+  &__tags
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    list-style: none
+    padding: 0
+
+    .tag
+      background-color: #ff6060
+      color: white
+      padding: 0.3rem 1rem
+      border-radius: 10px
+      font-size: 12px
+
+  &__side
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: space-between
+    gap: 0.5rem
+    
+    @media (max-width: 768px)
+      flex-direction: row-reverse
+      align-items: center
+      width: 100%
+      justify-content: space-between
+      margin-top: 1rem
+
+.host
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  p
+    font-size: 14px
+    font-weight: 600
+    color: #FF6060
+  img
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    object-fit: cover
+    
+  @media (max-width: 768px)
+    order: 1
+
+.rating
+  display: flex
+  gap: 0.2rem
+  
+  @media (max-width: 768px)
+    order: 2
+
+.star
+  font-size: 18px
+  color: #e3e3e3
+
+  &.filled
+    color: #ff6060
+    
+  @media (max-width: 768px)
+    font-size: 15px

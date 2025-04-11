@@ -1,0 +1,44 @@
+.product__dropdowns
+  display: flex
+  flex-direction: row
+  gap: 20px
+  
+  @media (max-width: 768px)
+    flex-direction: column
+    
+    .dropdown
+      width: 100%
+
+.dropdown
+  width: 50%
+  
+  &__toggle
+    background-color: #ff6060
+    color: white
+    font-weight: 600
+    border: none
+    width: 100%
+    padding: 1rem
+    border-radius: 5px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 1rem
+    cursor: pointer
+
+  &__content
+    max-height: 0
+    overflow: hidden
+    transition: max-height 0.4s ease, padding 0.4s ease
+    background: #f7f7f7
+    padding: 0 1rem
+    border-radius: 0 0 10px 10px
+
+    p, ul, li
+      text-decoration: none
+      margin: 0
+      color: #000
+    
+    &.open
+      max-height: 500px
+      padding: 1rem

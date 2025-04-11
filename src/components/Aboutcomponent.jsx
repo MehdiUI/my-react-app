@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/About.sass';
 
+<Banner />
 const About = () => {
   // État pour gérer l'ouverture/fermeture des accordéons
   const [openAccordion, setOpenAccordion] = useState(null);

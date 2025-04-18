@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/about';
 import Product from './components/Product';
 import NotFound from './pages/notFound';
+import Vehicules from './pages/vehicules';
 import Nav from './components/Nav';
 import Banner from './components/Banner';
 import CardList from './components/CardList';
@@ -21,14 +22,14 @@ function App() {
           element={
             <>
               <Banner />
-              <CardList data={data} />
+              <CardList data={data} urlPath="logement" />
             </>
           }
         />
         <Route path="/a-propos" element={<About />} />
         <Route path="/logement/:id" element={<Product />} />
+        <Route path="/vehicule" element={<Vehicules />} />
         <Route path="*" element={<NotFound />} />
-        {/* <Route path="/vehicule" element={<Vehicules/>} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

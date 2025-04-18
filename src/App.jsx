@@ -5,7 +5,7 @@ import Product from './components/Product';
 import NotFound from './pages/notFound';
 import Nav from './components/Nav';
 import Banner from './components/Banner';
-import Card from './components/Card';
+import CardList from './components/CardList';
 import Footer from './components/Footer';
 import data from './datas/Product.json'
 import './Styles/App.sass';
@@ -21,7 +21,7 @@ function App() {
           element={
             <>
               <Banner />
-              <Card data={data} />
+              <CardList data={data} />
             </>
           }
         />

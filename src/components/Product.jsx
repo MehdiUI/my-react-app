@@ -1,6 +1,6 @@
+// Product.jsx
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import data from '../datas/Product.json'
 import '../Styles/Product.sass'
 
 // Import des composants séparés
@@ -8,35 +8,37 @@ import Carrousel from '../components/Carrousel'
 import Infos from '../components/Infos'
 import Dropdown from '../components/Dropdown'
 
-function Product() {
+function Product({ data, type }) {
   const { id } = useParams()
-  const product = data.find(item => item.id === id)
-  
-  if (!product) return <h2>Produit introuvable</h2>
+
+  // Recherche de l'élément (produit ou véhicule) par ID
+  const item = data.find(item => item.id === id)
+
+  if (!item) return <h2>{type} introuvable</h2>  // Si l'élément n'existe pas
   
   return (
     <section className="product">
       {/* Carrousel d'images */}
-      <Carrousel pictures={product.pictures} />
+      <Carrousel pictures={item.pictures || item.images} />
       
-      {/* Informations du logement */}
+      {/* Informations de l'élément (produit ou véhicule) */}
       <Infos 
-        title={product.title}
-        location={product.location}
-        tags={product.tags}
-        host={product.host}
-        rating={product.rating}
+        title={item.title}
+        location={item.location}
+        tags={item.tags}
+        host={item.host}
+        rating={item.rating}
       />
       
       {/* Sections dépliables */}
       <div className="product__dropdowns">
         <Dropdown title="Description">
-          <p>{product.description}</p>
+          <p>{item.description}</p>
         </Dropdown>
         
         <Dropdown title="Équipements">
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            {product.equipments.map((eq, index) => (
+            {item.equipments.map((eq, index) => (
               <li key={index}>{eq}</li>
             ))}
           </ul>

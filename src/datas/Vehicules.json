@@ -2,7 +2,7 @@
     {
       "id": "v1245ab7",
       "title": "Citroën C3 - Compact",
-      "cover": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
+      "image": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
       "pictures": [
         "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
         "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
@@ -31,7 +31,7 @@
     {
       "id": "v2789cd4",
       "title": "Renault Clio - Élégance",
-      "cover": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
+      "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
       "pictures": [
         "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
         "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
@@ -60,7 +60,7 @@
     {
       "id": "v3567ef2",
       "title": "Peugeot 3008 - SUV Familial",
-      "cover": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
+      "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
       "pictures": [
         "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",
         "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=800&q=80",

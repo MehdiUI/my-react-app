@@ -1,17 +1,26 @@
-import React from 'react';
-import Banner from '../components/Banner';
-import CardList from '../components/CardList';
-import vehiculesData from '../datas/Vehicules.json';
+// pages/Vehicules.jsx
+import React from 'react'
+import CardList from '../components/CardList'
+import vehicules from '../datas/Vehicules.json'
 
+// mapping : transforme "image" (ou "cover") en "cover"
+const mapVehicule = (item) => ({
+  id: item.id,
+  title: item.title,
+  cover: item.image || item.cover, // gère les deux cas
+})
 
 function Vehicules() {
   return (
-    <main className="vehicules-page">
-      <Banner />
-      <h1 className="vehicules-title">Nos véhicules disponibles</h1>
-      <CardList data={vehiculesData} urlPath="vehicule" />
-    </main>
-  );
+    <div className="vehicule-page">
+      <h1>Nos véhicules disponibles</h1>
+      <CardList
+        data={vehicules}
+        urlPath="vehicule"
+        mapToCardProps={mapVehicule}
+      />
+    </div>
+  )
 }
 
-export default Vehicules;
+export default Vehicules

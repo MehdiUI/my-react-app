@@ -1,25 +1,28 @@
-// pages/Vehicules.jsx
+// vehicules.jsx
 import React from 'react'
+import Banner from '../components/Banner'
 import CardList from '../components/CardList'
-import vehicules from '../datas/Vehicules.json'
-
-// mapping : transforme "image" (ou "cover") en "cover"
-const mapVehicule = (item) => ({
-  id: item.id,
-  title: item.title,
-  cover: item.image || item.cover, // gère les deux cas
-})
+import data from '../datas/Vehicules.json'
 
 function Vehicules() {
+  // Mapping pour le format des véhicules
+  // Certains véhicules utilisent 'image', d'autres 'cover'
+  const vehiculesMapping = {
+    id: 'id',
+    title: 'title',
+    // Vérifier les deux propriétés possibles pour l'image
+    cover: (item) => item.cover || item.image
+  };
+
   return (
-    <div className="vehicule-page">
-      <h1>Nos véhicules disponibles</h1>
-      <CardList
-        data={vehicules}
-        urlPath="vehicule"
-        mapToCardProps={mapVehicule}
+    <>
+      <Banner />
+      <CardList 
+        data={data} 
+        urlPath="vehicule" 
+        mapping={vehiculesMapping}
       />
-    </div>
+    </>
   )
 }
 

@@ -36,22 +36,22 @@ function App() {
         />
         <Route path="/a-propos" element={<About />} />
         
-        {/* Page produit */}
+    
         <Route
           path="/logement/:id"
           element={<Product data={data} type="Produit" />}
         />
         
-        {/* Page véhicule */}
+       
+        <Route path="/vehicule" element={<Vehicules />} />
+        
+        {/* Ensuite la route avec paramètre */}
         <Route
           path="/vehicule/:id"
           element={<Product data={vehicules} type="Véhicule" />}
         />
         
-        {/* Page des véhicules */}
-        <Route path="/vehicule" element={<Vehicules />} />
-        
-        {/* Page 404 */}
+     
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

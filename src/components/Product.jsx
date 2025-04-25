@@ -1,6 +1,6 @@
 // Product.jsx
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import '../Styles/Product.sass'
 
 // Import des composants séparés
@@ -8,20 +8,28 @@ import Carrousel from '../components/Carrousel'
 import Infos from '../components/Infos'
 import Dropdown from '../components/Dropdown'
 
-function Product({ data, type }) {
+function Product({ data, }) {
   const { id } = useParams()
-
+  const navigate = useNavigate()
+  
   // Recherche de l'élément (produit ou véhicule) par ID
   const item = data.find(item => item.id === id)
-
-  if (!item) return <h2>{type} introuvable</h2>  // Si l'élément n'existe pas
+  
+  // Rediriger vers la page 404 si l'élément n'existe pas
+  useEffect(() => {
+    if (!item) {
+      navigate('/*', { replace: true })
+    }
+  }, [item, navigate])
+  
+  // Si l'élément n'existe pas, retourner null pendant la redirection
+  if (!item) return null
   
   return (
     <section className="product">
-      {/* Carrousel d'images */}
+      
       <Carrousel pictures={item.pictures || item.images} />
       
-      {/* Informations de l'élément (produit ou véhicule) */}
       <Infos 
         title={item.title}
         location={item.location}
@@ -30,7 +38,6 @@ function Product({ data, type }) {
         rating={item.rating}
       />
       
-      {/* Sections dépliables */}
       <div className="product__dropdowns">
         <Dropdown title="Description">
           <p>{item.description}</p>

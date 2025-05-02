@@ -42,15 +42,6 @@ function App() {
           element={<Product data={data} type="Produit" />}
         />
         
-       
-        <Route path="/vehicule" element={<Vehicules />} />
-        
-        {/* Ensuite la route avec paramètre */}
-        <Route
-          path="/vehicule/:id"
-          element={<Product data={vehicules} type="Véhicule" />}
-        />
-        
      
         <Route path="*" element={<NotFound />} />
       </Routes>

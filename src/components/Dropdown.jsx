@@ -10,7 +10,7 @@ function Dropdown({ title, children }) {
     <div className="dropdown">
       <button className="dropdown__toggle" onClick={() => setIsOpen(!isOpen)}>
         {title}
-        <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+        <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronUp} />
       </button>
       <div className={`dropdown__content ${isOpen ? 'open' : ''}`}>
         {children}

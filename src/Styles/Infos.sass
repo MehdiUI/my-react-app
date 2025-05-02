@@ -15,15 +15,24 @@
     color: black
 
     h1
-      font-size: 24px
+      font-size: 36px
       font-weight: 500
       margin: 0
       color: #FF6060
+
+      @media (max-width: 768px)
+       font-size: 18px
+
+      
 
     p
       font-size: 18px
     
       font-weight: 500
+      
+      @media (max-width: 768px)
+       font-size: 14px
+
 
   &__tags
     display: flex
@@ -37,7 +46,12 @@
       color: white
       padding: 0.3rem 1rem
       border-radius: 10px
-      font-size: 12px
+      font-size: 14px
+      font-weight: bold
+
+      @media (max-width: 768px)
+       font-size: 10px
+
 
   &__side
     display: flex
@@ -45,6 +59,15 @@
     align-items: flex-end
     justify-content: space-between
     gap: 0.5rem
+
+    @media (max-width: 1294px)
+     flex-direction: row-reverse
+     align-items: center
+     width: 100%
+     justify-content: space-between
+     margin-top: 1rem
+     
+
     
     @media (max-width: 768px)
       flex-direction: row-reverse
@@ -58,17 +81,27 @@
   align-items: center
   gap: 0.5rem
   p
-    font-size: 14px
+    font-size: 18px
     font-weight: 600
     color: #FF6060
+
+    @media (max-width: 768px)
+     font-size: 12px
+
   img
-    width: 48px
-    height: 48px
+    width: 64px
+    height: 64px
     border-radius: 50%
     object-fit: cover
+
+    @media (max-width: 768px)
+    width: 32px
+    height: 32px
     
-  @media (max-width: 768px)
-    order: 1
+    
+  
+    
+
 
 .rating
   display: flex
@@ -78,11 +111,12 @@
     order: 2
 
 .star
-  font-size: 18px
+  font-size: 36px
+  
   color: #e3e3e3
 
   &.filled
     color: #ff6060
     
   @media (max-width: 768px)
-    font-size: 15px
+    font-size: 18px

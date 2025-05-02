@@ -9,10 +9,14 @@
   display: flex
   flex-direction: column
   width:85%
-  padding-top: 2rem
+ 
   align-items: center
   justify-content: center
   margin: 0 auto
+
+  @media (max-width: 767px)
+   width:100%
+ 
   
 
 .about-dropdowns
@@ -37,8 +41,11 @@
       display: flex
       justify-content: space-between
       align-items: center
-      font-size: 1rem
+      font-size: 24px
       cursor: pointer
+
+      @media (max-width: 768px)
+        font-size: 13px
 
     &__content
       max-height: 0
@@ -62,8 +69,7 @@
   .about-container
     width: 90vw
   
-  .about-content
-    margin-top: 1rem
+  
 
   .about-dropdowns
     gap: 20px

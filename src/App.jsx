@@ -3,13 +3,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/about';
 import Product from './components/Product';
 import NotFound from './pages/notFound';
+import Vehicules from './pages/Vehicules';
 import Nav from './components/Nav';
 import Banner from './components/Banner';
 import CardList from './components/CardList';
 import Footer from './components/Footer';
 import data from './datas/Product.json'; // Données des produits
+import vehicules from './datas/Vehicules.json'; // Données des véhicules
 import './Styles/App.sass';
 import './Styles/Banner.sass';
+
 
 function App() {
   // Mapping pour les véhicules qui doivent être affichés sur la page d'accueil
@@ -38,6 +41,15 @@ function App() {
         <Route
           path="/logement/:id"
           element={<Product data={data} type="Produit" />}
+        />
+        
+       
+        <Route path="/vehicule" element={<Vehicules />} />
+        
+        {/* Ensuite la route avec paramètre */}
+        <Route
+          path="/vehicule/:id"
+          element={<Product data={vehicules} type="Véhicule" />}
         />
         
      

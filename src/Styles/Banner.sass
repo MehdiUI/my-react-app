@@ -1,10 +1,10 @@
 .Banner
   display: flex
-  width: 87.5vw
+  width: 87vw
   justify-content: center
   align-items: center
   align-self: center
-  padding: 2rem  0rem  2rem  0rem  
+  padding: 2rem 0rem 2rem 0rem  
   margin: 0 auto
   position: relative
 
@@ -15,13 +15,10 @@
     object-fit: cover
     display: block
     
-
-  
-     
   &::after
     content: ''
     position: absolute
-    width: 87.5vw
+    width: 87vw
     height: 225px
     background-color: rgba(0, 0, 0, 0.6)
     border-radius: 25px
@@ -46,8 +43,11 @@
 
 @media (max-width: 767px)
   .Banner
-    img
+    width: 92vw
+    
+    img 
       height: 175px
     
-    &::after
+    &::after 
       height: 175px
+      width: 92vw

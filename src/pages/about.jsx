@@ -6,7 +6,6 @@ import '../styles/Footer.sass';
 
 
 const About = () => {
-  // Données des sections
   const sections = [
     {
       title: "Fiabilité",

@@ -22,7 +22,6 @@ function Product({ data, }) {
     }
   }, [item, navigate])
   
-  // Si l'élément n'existe pas, retourner null pendant la redirection
   if (!item) return null
   
   return (
